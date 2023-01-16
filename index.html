@@ -23,12 +23,11 @@
 
                 return choice; 
             }
-
             
-            // singleRound
+            // playRound
             let playerSelection;
             let computerSelection;
-            
+
             function playRound (playerSelection, computerSelection) {
 
                 // Get playerSelection
@@ -40,41 +39,66 @@
                 // CASE: Draw
                 if (playerSelection === computerSelection) {
                     console.log('Draw');
-                    return 'Draw';
+                    return 'draw';
                 } 
                 
                 // CASE: playerSelection is 'rock'
                 if (playerSelection === 'rock' && computerSelection === 'scissors') {
                     console.log('You Win! Rock beats Scissors');
-                    return 'You Win! Rock beats Scissors';
+                    return 'win';
                 } else if (playerSelection === 'rock' && computerSelection === 'paper') {
                     console.log('You Lose! Paper beats Rock');
-                    return 'You Lose! Paper beats Rock';
+                    return 'lose';
                 }
 
                 // CASE: playerSelection is 'paper'
                 if (playerSelection === 'paper' && computerSelection === 'rock') {
                     console.log('You Win! Paper beats Rock');
-                    return 'You Win! Paper beats Rock'; 
+                    return 'win'; 
                 } else if (playerSelection === 'paper' && computerSelection === 'scissors') {
                     console.log('You Lose! Scissors beats Paper');
-                    return 'You Lose! Scissors beats Paper';
+                    return 'lose';
                 }
 
                 // CASE: playerSelection is 'scissors'
                 if (playerSelection === 'scissors' && computerSelection === 'paper') {
                     console.log('You Win! Scissors beats Paper');
-                    return 'You Win! Scissors beats Paper'; 
+                    return 'win'; 
                 } else if (playerSelection === 'scissors' && computerSelection === 'rock') {
                     console.log('You Lose! Rock beats Scissors');
-                    return 'You Lose! Rock beats Scissors';
+                    return 'lose';
                 }
 
             }
 
+            // game
+            function game() {   
+                let playerScore = 0;
+                let computerScore = 0;
+                let roundResult = '';
 
+                for (let i = 0; i < 5; i++) {
+                    roundResult = playRound();
 
-            playRound();
+                    if (roundResult === 'win') {
+                        playerScore++;
+                    } else if (roundResult === 'lose') {
+                        computerScore++;
+                    } else {
+                        continue;
+                    }
+                }
+
+                if (playerScore > computerScore) {
+                    console.log(`You Win!\nPlayer  : ${playerScore}\nComputer: ${computerScore}`);
+                } else if (playerScore < computerScore) {
+                    console.log(`You Lose!\nPlayer  : ${playerScore}\nComputer: ${computerScore}`);
+                } else {
+                    console.log('DRAW');
+                }
+            }
+
+            game();
         </script>
     </body>
 </html>
