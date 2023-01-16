@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Odin Rock Paper Scissors</title>
+    </head>
+    <body>
+        <script>
+            
+            // getComputerChoice
+            function getComputerChoice() {
+
+                // Create array of choices
+                let choices = ['rock', 'paper', 'scissors'];
+                
+                // console.log('Length of Choice array: ' + choices.length);
+
+                // Get randomised choice
+                // console.log('Randomised index for Choice Array: ' + Math.floor(Math.random() * choices.length));
+
+                choice = choices[Math.floor(Math.random() * choices.length)];
+                
+                // console.log(choice);
+
+                return choice; 
+            }
+        </script>
+    </body>
+</html>
