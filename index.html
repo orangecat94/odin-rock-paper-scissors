@@ -71,32 +71,32 @@
 
             }
 
-            // game
-            function game() {   
-                let playerScore = 0;
-                let computerScore = 0;
-                let roundResult = '';
+            // // game
+            // function game() {   
+            //     let playerScore = 0;
+            //     let computerScore = 0;
+            //     let roundResult = '';
 
-                for (let i = 0; i < 5; i++) {
-                    roundResult = playRound();
+            //     for (let i = 0; i < 5; i++) {
+            //         roundResult = playRound();
 
-                    if (roundResult === 'win') {
-                        playerScore++;
-                    } else if (roundResult === 'lose') {
-                        computerScore++;
-                    } else {
-                        continue;
-                    }
-                }
+            //         if (roundResult === 'win') {
+            //             playerScore++;
+            //         } else if (roundResult === 'lose') {
+            //             computerScore++;
+            //         } else {
+            //             continue;
+            //         }
+            //     }
 
-                if (playerScore > computerScore) {
-                    console.log(`You Win!\nPlayer  : ${playerScore}\nComputer: ${computerScore}`);
-                } else if (playerScore < computerScore) {
-                    console.log(`You Lose!\nPlayer  : ${playerScore}\nComputer: ${computerScore}`);
-                } else {
-                    console.log('DRAW');
-                }
-            }
+            //     if (playerScore > computerScore) {
+            //         console.log(`You Win!\nPlayer  : ${playerScore}\nComputer: ${computerScore}`);
+            //     } else if (playerScore < computerScore) {
+            //         console.log(`You Lose!\nPlayer  : ${playerScore}\nComputer: ${computerScore}`);
+            //     } else {
+            //         console.log('DRAW');
+            //     }
+            // }
 
             game();
         </script>
