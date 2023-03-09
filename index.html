@@ -9,6 +9,22 @@
         <button class="scissors">scissors</button>
         
         <script>
+
+            const rock = document.querySelector('button.rock');
+            const paper = document.querySelector('button.paper');
+            const scissors = document.querySelector('button.scissors');
+
+            rock.addEventListener('click', function(e) {
+                console.log(this.classList.value)
+            });
+            
+            paper.addEventListener('click', function(e) {
+                console.log(this.classList.value)
+            });
+
+            scissors.addEventListener('click', function(e) {
+                console.log(this.classList.value)
+            });
             
             // getComputerChoice
             function getComputerChoice() {
@@ -102,7 +118,7 @@
             //     }
             // }
 
-            game();
+            // game();
         </script>
     </body>
 </html>
