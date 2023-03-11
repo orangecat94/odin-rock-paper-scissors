@@ -178,6 +178,11 @@
                 currentScore.innerText = `Player: ${playerScore} 
                                           Computer: ${computerScore}`;
                 score.replaceChildren(currentScore);
+
+                if (playerScore === 5 || computerScore === 5) {
+                    playerScore = 0;
+                    computerScore = 0;
+                }
             }
 
             // // game
