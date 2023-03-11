@@ -8,16 +8,21 @@
         <button class="paper">paper</button>
         <button class="scissors">scissors</button>
         
+        <div class="outcome">
+
+        </div>
         <script>
 
             const rock = document.querySelector('button.rock');
             const paper = document.querySelector('button.paper');
             const scissors = document.querySelector('button.scissors');
+            const outcome = document.querySelector('div.outcome');
 
             rock.addEventListener('click', function(e) {
                 console.log(this.classList.value)
             });
             
+             
             paper.addEventListener('click', function(e) {
                 console.log(this.classList.value)
             });
