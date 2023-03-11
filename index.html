@@ -21,21 +21,21 @@
             rock.addEventListener('click', () => {
                 const computerSelection = getComputerChoice();
                 const playerSelection = 'rock';
-                
+
                 playRound(playerSelection, computerSelection);
             });
              
             paper.addEventListener('click', () => {
                 const computerSelection = getComputerChoice();
                 const playerSelection = 'paper';
-                
+
                 playRound(playerSelection, computerSelection);
             });
              
             scissors.addEventListener('click', () => {
                 const computerSelection = getComputerChoice();
                 const playerSelection = 'scissors';
-                
+
                 playRound(playerSelection, computerSelection);
             });
               
@@ -68,6 +68,9 @@
             // computerSelection = getComputerChoice();
 
             function playRound(playerSelection, computerSelection) {
+                
+                // Clearing div for each round
+                outcome.removeChild(outcome.lastChild);
 
                 // CASE: Draw
                 if (playerSelection === computerSelection) {
