@@ -74,19 +74,11 @@
                 // Clearing outcome div for each round
                 outcome.replaceChildren();
 
-                // Updating score div for each round
-                const currentScore = document.createElement('p');
-                currentScore.innerText = `Player: ${playerScore} 
-                                          Computer: ${computerScore}`;
-                score.replaceChildren(currentScore);
-
                 // CASE: Draw
                 if (playerSelection === computerSelection) {
                     const p = document.createElement('p');
                     p.innerText = 'draw';
                     outcome.appendChild(p);
-                    // console.log('Draw');
-                    // return 'draw';
                 } 
                 
                 // CASE: playerSelection is 'rock'
@@ -97,14 +89,22 @@
                     
                     playerScore++;
 
-                    // console.log('You Win! Rock beats Scissors');
-                    // return 'win';
+                    if (playerScore === 5) {
+                        p.innerText = 'Player Wins!';
+                        outcome.replaceChildren(p);
+                    }
+
                 } else if (playerSelection === 'rock' && computerSelection === 'paper') {
                     const p = document.createElement('p');
                     p.innerText = 'lose';
                     outcome.appendChild(p);
                     
                     computerScore++;
+
+                    if (computerScore === 5) {
+                        p.innerText = 'Computer Wins!';
+                        outcome.replaceChildren(p);
+                    }
 
                     // console.log('You Lose! Paper beats Rock');
                     // return 'lose';
@@ -118,6 +118,11 @@
                     
                     playerScore++;
 
+                    if (playerScore === 5) {
+                        p.innerText = 'Player Wins!';
+                        outcome.replaceChildren(p);
+                    }
+
                     // console.log('You Win! Paper beats Rock');
                     // return 'win'; 
                 } else if (playerSelection === 'paper' && computerSelection === 'scissors') {
@@ -126,6 +131,11 @@
                     outcome.appendChild(p);
                     
                     computerScore++;
+
+                    if (computerScore === 5) {
+                        p.innerText = 'Computer Wins!';
+                        outcome.replaceChildren(p);
+                    }
 
                     // console.log('You Lose! Scissors beats Paper');
                     // return 'lose';
@@ -139,6 +149,11 @@
                     
                     playerScore++;
 
+                    if (playerScore === 5) {
+                        p.innerText = 'Player Wins!';
+                        outcome.replaceChildren(p);
+                    }
+
                     // console.log('You Win! Scissors beats Paper');
                     // return 'win'; 
 
@@ -149,10 +164,20 @@
                     
                     computerScore++;
 
+                    if (computerScore === 5) {
+                        p.innerText = 'Computer Wins!';
+                        outcome.replaceChildren(p);
+                    }
+                    
                     // console.log('You Lose! Rock beats Scissors');
                     // return 'lose';
                 }
 
+                // Updating score div for each round
+                const currentScore = document.createElement('p');
+                currentScore.innerText = `Player: ${playerScore} 
+                                          Computer: ${computerScore}`;
+                score.replaceChildren(currentScore);
             }
 
             // // game
