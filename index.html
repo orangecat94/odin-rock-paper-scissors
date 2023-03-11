@@ -17,26 +17,28 @@
             const paper = document.querySelector('button.paper');
             const scissors = document.querySelector('button.scissors');
             const outcome = document.querySelector('div.outcome');
-
-            rock.addEventListener('click', function(e) {
-                console.log(this.classList.value)
-            });
-            
-            rock.addEventListener('click', function(e) {
+ 
+            rock.addEventListener('click', () => {
                 const computerSelection = getComputerChoice();
                 const playerSelection = 'rock';
                 
                 playRound(playerSelection, computerSelection);
             });
              
-            paper.addEventListener('click', function(e) {
-                console.log(this.classList.value)
+            paper.addEventListener('click', () => {
+                const computerSelection = getComputerChoice();
+                const playerSelection = 'paper';
+                
+                playRound(playerSelection, computerSelection);
             });
-
-            scissors.addEventListener('click', function(e) {
-                console.log(this.classList.value)
+             
+            scissors.addEventListener('click', () => {
+                const computerSelection = getComputerChoice();
+                const playerSelection = 'scissors';
+                
+                playRound(playerSelection, computerSelection);
             });
-            
+              
             // getComputerChoice
             function getComputerChoice() {
 
@@ -59,11 +61,11 @@
             let playerSelection;
             let computerSelection;
 
-            // Get playerSelection
-            playerSelection = prompt('Rock, Paper, or Scissors? ').toLowerCase();
+            // // Get playerSelection
+            // playerSelection = prompt('Rock, Paper, or Scissors? ').toLowerCase();
 
-            // Get computerSelection
-            computerSelection = getComputerChoice();
+            // // Get computerSelection
+            // computerSelection = getComputerChoice();
 
             function playRound(playerSelection, computerSelection) {
 
