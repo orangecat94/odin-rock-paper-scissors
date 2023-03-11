@@ -22,6 +22,12 @@
                 console.log(this.classList.value)
             });
             
+            rock.addEventListener('click', function(e) {
+                const computerSelection = getComputerChoice();
+                const playerSelection = 'rock';
+                
+                playRound(playerSelection, computerSelection);
+            });
              
             paper.addEventListener('click', function(e) {
                 console.log(this.classList.value)
