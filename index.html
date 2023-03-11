@@ -8,14 +8,14 @@
         <button class="paper">paper</button>
         <button class="scissors">scissors</button>
         
-        <div class="outcome">
-
-        </div>
+        <div class="score"></div> 
+        <div class="outcome"></div> 
         <script>
 
             const rock = document.querySelector('button.rock');
             const paper = document.querySelector('button.paper');
             const scissors = document.querySelector('button.scissors');
+            const score = document.querySelector('div.score');
             const outcome = document.querySelector('div.outcome');
  
             rock.addEventListener('click', () => {
@@ -60,6 +60,8 @@
             // playRound
             let playerSelection;
             let computerSelection;
+            let playerScore = 0;
+            let computerScore = 0;
 
             // // Get playerSelection
             // playerSelection = prompt('Rock, Paper, or Scissors? ').toLowerCase();
@@ -69,8 +71,14 @@
 
             function playRound(playerSelection, computerSelection) {
                 
-                // Clearing div for each round
-                outcome.removeChild(outcome.lastChild);
+                // Clearing outcome div for each round
+                outcome.replaceChildren();
+
+                // Updating score div for each round
+                const currentScore = document.createElement('p');
+                currentScore.innerText = `Player: ${playerScore} 
+                                          Computer: ${computerScore}`;
+                score.replaceChildren(currentScore);
 
                 // CASE: Draw
                 if (playerSelection === computerSelection) {
@@ -87,6 +95,8 @@
                     p.innerText = 'win';
                     outcome.appendChild(p);
                     
+                    playerScore++;
+
                     // console.log('You Win! Rock beats Scissors');
                     // return 'win';
                 } else if (playerSelection === 'rock' && computerSelection === 'paper') {
@@ -94,6 +104,8 @@
                     p.innerText = 'lose';
                     outcome.appendChild(p);
                     
+                    computerScore++;
+
                     // console.log('You Lose! Paper beats Rock');
                     // return 'lose';
                 }
@@ -104,6 +116,8 @@
                     p.innerText = 'win';
                     outcome.appendChild(p);
                     
+                    playerScore++;
+
                     // console.log('You Win! Paper beats Rock');
                     // return 'win'; 
                 } else if (playerSelection === 'paper' && computerSelection === 'scissors') {
@@ -111,6 +125,8 @@
                     p.innerText = 'lose';
                     outcome.appendChild(p);
                     
+                    computerScore++;
+
                     // console.log('You Lose! Scissors beats Paper');
                     // return 'lose';
                 }
@@ -121,6 +137,8 @@
                     p.innerText = 'win';
                     outcome.appendChild(p);
                     
+                    playerScore++;
+
                     // console.log('You Win! Scissors beats Paper');
                     // return 'win'; 
 
@@ -129,6 +147,8 @@
                     p.innerText = 'lose';
                     outcome.appendChild(p);
                     
+                    computerScore++;
+
                     // console.log('You Lose! Rock beats Scissors');
                     // return 'lose';
                 }
